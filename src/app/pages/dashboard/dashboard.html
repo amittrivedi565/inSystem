@@ -1,0 +1,5 @@
+<div class="container mt-5">
+    <app-page-info PageHeading="Manage Employees" PageDesc="Enter the required information regarding the employee." />
+
+<app-form [fields]="employeeFields" submitLabel="Save" (onSubmit)="saveEmployee($event)" />
+</div>

@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-font-sans-serif: 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: lighter;
+}
+
+td, th {
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+}
+
+.command-bar {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+
+    background: #0078D4;
+    border-bottom: 1px solid #006cbe;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.command-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.command-link {
+    height: 100%;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 12px;
+
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.command-link:hover {
+    background: #106EBE;
+    color: #ffffff;
+}
+
+.command-link i {
+    font-size: 15px;
+}
+
+@media (max-width: 576px) {
+    .command-bar {
+        height: 44px;
+        gap: 5px;
+        padding: 0 6px;
+    }
+
+    .command-link {
+        font-size: 12px;
+        padding: 0 9px;
+    }
+}

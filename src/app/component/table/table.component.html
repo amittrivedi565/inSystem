@@ -1,0 +1,25 @@
+<table class="mt-4">
+    <thead>
+        <tr>
+            <th>*</th>
+            @for (col of cols(); track col.field) {
+            <th>
+                {{ col.header }}
+            </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
+            @for (rows of cols(); track rows.field) {
+
+            <td>
+                {{ rows.header }}
+            </td>
+            }
+        </tr>
+    </tbody>
+</table>
