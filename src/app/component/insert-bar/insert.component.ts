@@ -6,4 +6,7 @@ import { Component, input } from "@angular/core";
     templateUrl: "./insert.component.html",
 })
 
-export class InsertBarComponent{}
+export class InsertBarComponent{
+    Title = input.required<string>()
+    SubTitle = input.required<string>()
+}
