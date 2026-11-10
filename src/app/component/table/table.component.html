@@ -1,25 +1,52 @@
-<table class="mt-4">
-    <thead>
+<table class="table table-hover table-sm mt-4 border">
+    <thead class="border-bottom">
         <tr>
-            <th>*</th>
-            @for (col of cols(); track col.field) {
-            <th>
-                {{ col.header }}
-            </th>
-            }
+            <th class="p-3">Operations</th>
+            <th class="p-3">Name</th>
+            <th class="p-3">Email</th>
+            <th class="p-3">Status</th>
         </tr>
     </thead>
+
     <tbody>
         <tr>
-            <td>
-                <input type="checkbox" />
-            </td>
-            @for (rows of cols(); track rows.field) {
+            <!-- Operations -->
+            <td class="p-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 text-dark p-1" type="button" data-bs-toggle="dropdown">
+                        ⋮
+                    </button>
 
-            <td>
-                {{ rows.header }}
+                    <ul class="dropdown-menu dropdown-menu-sm rounded-0 shadow-sm py-1">
+                        <li>
+                            <a href="/employees/edit/1" class="dropdown-item small py-1">
+                                Edit
+                            </a>
+                        </li>
+                        <li>
+                            <button class="dropdown-item text-danger small py-1" type="button">
+                                Delete
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </td>
-            }
+
+            <td class="p-3">John Doe</td>
+            <td class="p-3">john.doe@insystem.in</td>
+            <td class="p-3">Active</td>
         </tr>
     </tbody>
 </table>
+
+<!-- 
+* Name
+* Email
+* Phone no
+* DOB
+* Project Allocated To
+* Designation
+* Clients
+* Attendance
+*
+ -->

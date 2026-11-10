@@ -1,15 +1,8 @@
-import { Component, input } from "@angular/core";
-
-interface TableColumn {
-    field: string;
-    header: string;
-}
+import { Component, input } from '@angular/core';
 
 @Component({
-    selector: "app-table",
+    selector: 'app-table',
     standalone: true,
-    templateUrl: "./table.component.html",
+    templateUrl: './table.component.html',
 })
-export class TableComponent {
-    cols = input.required<TableColumn[]>();
-}
+export class TableComponent {}

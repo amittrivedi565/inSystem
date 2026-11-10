@@ -3,12 +3,13 @@
 :root {
   --bs-body-font-family: 'Inter', sans-serif;
   --bs-font-sans-serif: 'Inter', sans-serif;
+  --main-color:  #fcfcfc;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
-  background-color: #ffffff;
+  background-color: #eeedeb;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -16,11 +17,15 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-weight: lighter;
+  font-size: 13px;
+}
+
+tr{
+    height: 55px;
 }
 
 td, th {
-  border-bottom: 1px solid #dddddd;
-  padding: 10px;
+  border-bottom: .5px solid #dddddd;
 }
 
 .command-bar {
