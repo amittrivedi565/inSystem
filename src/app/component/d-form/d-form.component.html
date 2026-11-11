@@ -1,10 +1,14 @@
-<form>
+
+<form class="w-100">
+
     <div class="d-flex flex-column w-100 mt-4 mt-md-5
-                bg-white border p-md-4 text-start">
+                bg-white border p-3 p-md-4 text-start">
 
         <!-- Form Header -->
-        <div class="d-flex align-items-center justify-content-between
-                    border-bottom pb-3 mb-4">
+        <div class="d-flex flex-column flex-sm-row
+                    align-items-start align-items-sm-center
+                    justify-content-between
+                    border-bottom pb-3 mb-4 gap-2">
 
             <div>
                 <h5 class="fw-semibold mb-1 text-dark">
@@ -19,17 +23,19 @@
             <span class="text-danger small text-nowrap">
                 * Required fields
             </span>
+
         </div>
 
-        <!-- Dynamic Input Fields -->
-        <div class="row g-4">
+        <!-- Responsive Input Grid -->
+        <div class="row g-3 g-md-4">
 
             @for (item of InputFields; track item.id) {
 
-                <div class="col-12 col-md-6 col-xl-4">
+                <div class="col-12 col-sm-6 col-lg-4 col-xxl-3">
 
-                    <label class="form-label fw-semibold small">
+                    <label class="form-label fw-semibold small mb-2">
                         {{ item.label }}
+
                         @if(item.required) {
                             <span class="text-danger">*</span>
                         }
@@ -38,40 +44,77 @@
                     @switch(item.type) {
 
                         @case("text") {
-                            <input
-                                type="text"
-                                class="form-control form-control-sm rounded-0"
+                            <input type="text"
+                                class="form-control form-control-sm rounded-0 w-100"
                                 [placeholder]="item.placeholder"
-                                [required]="item.required ?? false">
+                                [required]="item.required ?? false"
+                                [readonly]="$any(item).readonly ?? false">
                         }
 
                         @case("email") {
-                            <input
-                                type="email"
-                                class="form-control form-control-sm rounded-0"
+                            <input type="email"
+                                class="form-control form-control-sm rounded-0 w-100"
                                 [placeholder]="item.placeholder"
                                 [required]="item.required ?? false">
                         }
 
                         @case("tel") {
-                            <input
-                                type="tel"
-                                class="form-control form-control-sm rounded-0"
+                            <input type="tel"
+                                class="form-control form-control-sm rounded-0 w-100"
+                                [placeholder]="item.placeholder"
+                                [required]="item.required ?? false">
+                        }
+
+                        @case("number") {
+                            <input type="number"
+                                class="form-control form-control-sm rounded-0 w-100"
                                 [placeholder]="item.placeholder"
                                 [required]="item.required ?? false">
                         }
 
                         @case("date") {
-                            <input
-                                type="date"
-                                class="form-control form-control-sm rounded-0"
+                            <input type="date"
+                                class="form-control form-control-sm rounded-0 w-100"
                                 [required]="item.required ?? false">
                         }
 
+                        @case("select") {
+                            <select
+                                class="form-select form-select-sm rounded-0 w-100"
+                                [required]="item.required ?? false">
+
+                                <option value="" selected disabled>
+                                    {{ item.placeholder || 'Select option' }}
+                                </option>
+
+                                @for(option of item.options; track option) {
+                                    <option [value]="option">
+                                        {{ option }}
+                                    </option>
+                                }
+
+                            </select>
+                        }
+
+                        @case("file") {
+                            <input type="file"
+                                class="form-control form-control-sm rounded-0 w-100"
+                                [required]="item.required ?? false"
+                                [accept]="item.accept || '*/*'">
+                        }
+
+                        @case("textarea") {
+                            <textarea
+                                class="form-control form-control-sm rounded-0 w-100"
+                                [placeholder]="item.placeholder"
+                                [required]="item.required ?? false"
+                                rows="2">
+                            </textarea>
+                        }
+
                         @default {
-                            <input
-                                type="text"
-                                class="form-control form-control-sm rounded-0"
+                            <input type="text"
+                                class="form-control form-control-sm rounded-0 w-100"
                                 [placeholder]="item.placeholder">
                         }
                     }
@@ -80,5 +123,7 @@
             }
 
         </div>
+
     </div>
+
 </form>
