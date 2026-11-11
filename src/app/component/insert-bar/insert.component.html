@@ -1,8 +1,19 @@
-<div class="d-flex w-100 mt-5 border p-4 text-start align-items-center justify-content-between"
-    style="height: 130px; background-color: var(--main-color);">
+<div class="d-flex flex-column flex-md-row w-100 mt-4 mt-md-5
+            border p-3 p-md-4
+            text-start align-items-start align-items-md-center
+            justify-content-between gap-3"
+     style="background-color: var(--main-color);">
+
     <div class="insert-bar-left">
-        <h3>{{ Title() }}</h3>
-        <p class="text-muted mt-0">{{ SubTitle() }}</p>
+        <h3 class="mb-2 fs-4 fs-md-3">{{ Title() }}</h3>
+        <p class="text-muted mb-0">
+            {{ SubTitle() }}
+        </p>
     </div>
-    <a href="/dashboard" class="btn btn-outline-black">+</a>
-</div>
+
+    <a href="/dashboard"
+       class="btn btn-outline-secondary text-nowrap rounded-0 p-1">
+        <i class="bi bi-plus-lg me-1"></i>
+    </a>
+
+</div> 

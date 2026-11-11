@@ -1,0 +1,84 @@
+<form>
+    <div class="d-flex flex-column w-100 mt-4 mt-md-5
+                bg-white border p-md-4 text-start">
+
+        <!-- Form Header -->
+        <div class="d-flex align-items-center justify-content-between
+                    border-bottom pb-3 mb-4">
+
+            <div>
+                <h5 class="fw-semibold mb-1 text-dark">
+                    Employee Onboarding Form
+                </h5>
+
+                <p class="text-secondary small mb-0">
+                    Enter employee details and allocate projects.
+                </p>
+            </div>
+
+            <span class="text-danger small text-nowrap">
+                * Required fields
+            </span>
+        </div>
+
+        <!-- Dynamic Input Fields -->
+        <div class="row g-4">
+
+            @for (item of InputFields; track item.id) {
+
+                <div class="col-12 col-md-6 col-xl-4">
+
+                    <label class="form-label fw-semibold small">
+                        {{ item.label }}
+                        @if(item.required) {
+                            <span class="text-danger">*</span>
+                        }
+                    </label>
+
+                    @switch(item.type) {
+
+                        @case("text") {
+                            <input
+                                type="text"
+                                class="form-control form-control-sm rounded-0"
+                                [placeholder]="item.placeholder"
+                                [required]="item.required ?? false">
+                        }
+
+                        @case("email") {
+                            <input
+                                type="email"
+                                class="form-control form-control-sm rounded-0"
+                                [placeholder]="item.placeholder"
+                                [required]="item.required ?? false">
+                        }
+
+                        @case("tel") {
+                            <input
+                                type="tel"
+                                class="form-control form-control-sm rounded-0"
+                                [placeholder]="item.placeholder"
+                                [required]="item.required ?? false">
+                        }
+
+                        @case("date") {
+                            <input
+                                type="date"
+                                class="form-control form-control-sm rounded-0"
+                                [required]="item.required ?? false">
+                        }
+
+                        @default {
+                            <input
+                                type="text"
+                                class="form-control form-control-sm rounded-0"
+                                [placeholder]="item.placeholder">
+                        }
+                    }
+
+                </div>
+            }
+
+        </div>
+    </div>
+</form>

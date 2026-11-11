@@ -1,52 +1,57 @@
-<table class="table table-hover table-sm mt-5 border">
-    <thead class="border-bottom">
-        <tr>
-            <th class="p-3">Operations</th>
-            @for (cols of tableData.tHead; track cols.field) {
-            <th class="p-3">{{cols.header}}</th>
+<div class="table-responsive mt-5 border">
+
+    <table class="table table-hover table-sm mb-0">
+
+        <thead class="border-bottom">
+            <tr>
+                <th class="p-3 text-nowrap">Operations</th>
+
+                @for (cols of tableData.tHead; track cols.field) {
+                <th class="p-3 text-nowrap">{{ cols.header }}</th>
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (rows of tableData.tRows; track rows.id) {
+            <tr>
+                <td class="p-3 align-middle">
+                    <div class="dropdown">
+                        <button class="btn btn-sm border-0 text-dark p-1" type="button" data-bs-toggle="dropdown">
+                            ⋮
+                        </button>
+
+                        <ul class="dropdown-menu rounded-0 shadow-sm py-1">
+                            <li>
+                                <a [href]="'/employees/edit/' + rows.id" class="dropdown-item small py-1">
+                                    Edit
+                                </a>
+                            </li>
+                            <li>
+                                <button class="dropdown-item text-danger small py-1" type="button">
+                                    Delete
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+
+                @for (item of tableData.tHead; track item.field) {
+                <td class="p-3 align-middle text-nowrap">
+
+                    @if (item.field === 'name') {
+                    <a [href]="'/employees/' + rows.id" class="text-primary fw-semibold text-decoration-none">
+                        {{$any(rows)[item.field]}}
+                    </a>
+                    } @else {
+                    {{$any(rows)[item.field]}}
+                    }
+
+                </td>
+                }
+            </tr>
             }
-        </tr>
-    </thead>
+        </tbody>
 
-    <tbody>
-        @for (rows of tableData.tRows; track rows.id) {
-        <tr>
-            <td class="p-3">
-                <div class="dropdown">
-                    <button class="btn btn-sm border-0 text-dark p-1" type="button" data-bs-toggle="dropdown">
-                        ⋮
-                    </button>
-
-                    <ul class="dropdown-menu dropdown-menu-sm rounded-0 shadow-sm py-1">
-                        <li>
-                            <a href="/employees/edit/1" class="dropdown-item small py-1">
-                                Edit
-                            </a>
-                        </li>
-                        <li>
-                            <button class="dropdown-item text-danger small py-1" type="button">
-                                Delete
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </td>
-            @for (item of tableData.tHead; track item.field) {
-                <td class="align-middle">{{$any(rows)[item.field]}}</td>
-            }
-        </tr>
-        }
-    </tbody>
-</table>
-
-<!-- 
-* Name
-* Email
-* Phone no
-* DOB
-* Project Allocated To
-* Designation
-* Clients
-* Attendance
-*
- -->
+    </table>
+</div>

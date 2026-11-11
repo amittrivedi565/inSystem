@@ -7,7 +7,6 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
   font-size: 12px;
   background-color: #eeedeb;
   -webkit-font-smoothing: antialiased;
@@ -85,4 +84,20 @@ td, th {
         font-size: 12px;
         padding: 0 9px;
     }
+}
+
+.form-control::placeholder {
+    color: #adb5bd;
+    font-size: 11px;
+    opacity: 1;
+}
+
+.form-control:focus {
+    border-color: #0067b1;
+    box-shadow: 0 0 0 0.1rem rgba(0, 103, 177, 0.12);
+}
+
+.form-label {
+    color: #343a40;
+    margin-bottom: 7px;
 }

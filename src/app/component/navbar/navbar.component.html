@@ -1,45 +1,91 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #393532;">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark px-2 px-md-3" style="background-color: #332e2b;">
 
-    <a class="navbar-brand text-light" href="#" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><b>inSystem</b></a>
+    <div class="container-fluid">
 
-    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
+        <!-- Brand -->
+        <a class="navbar-brand me-4" href="#">
+            <b>in</b>System
+        </a>
 
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler shadow-none" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <ul class="navbar-nav mx-auto mb-3 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Employees</a>
-        </li>
+            <!-- Navigation Links -->
+            <ul class="navbar-nav mx-auto my-2 my-lg-0 gap-lg-2">
 
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Payroll</a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Employees</a>
+                </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Sub-Contractors</a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Payroll</a>
+                </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Vendors</a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Sub-Contractors</a>
+                </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">AMC</a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Vendors</a>
+                </li>
 
-      </ul>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">AMC</a>
+                </li>
 
-      <div class="profile text-light">
-        Amit. Trivedi
-      </div>
+            </ul>
+
+            <!-- Profile -->
+            <div class="dropdown pt-3 mt-2 pt-lg-0 mt-lg-0 border-lg-0">
+
+                <button class="btn text-light dropdown-toggle d-flex
+                               align-items-center gap-2 p-0"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+
+                    <span class="rounded-circle bg-secondary d-flex
+                                 align-items-center justify-content-center"
+                          style="width: 34px; height: 34px;">
+                        <i class="bi bi-person-fill"></i>
+                    </span>
+
+                    <span class="small fw-semibold">Amit Trivedi</span>
+
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end rounded-2 shadow-sm">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-person me-2"></i>My Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-gear me-2"></i>Settings
+                        </a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <button class="dropdown-item text-danger" type="button">
+                            <i class="bi bi-box-arrow-right me-2"></i>Logout
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
     </div>
-
-  </div>
 </nav>
