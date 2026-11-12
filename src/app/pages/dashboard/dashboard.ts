@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { PageInfoComponent } from '../../component/page-info/page-info.component';
+import { NaviTabComponent } from '../../component/navi-tab/navi-tab.component';
+import { TopOverlayComponent } from '../../component/top-overlay/top-overlay.component';
 
 @Component({
     selector: 'app-dashboard',
     standalone: true,
-    imports: [PageInfoComponent],
+    imports: [NaviTabComponent, TopOverlayComponent],
     templateUrl: './dashboard.html',
 })
 export class Dashboard {}

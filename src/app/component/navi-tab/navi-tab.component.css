@@ -1,0 +1,29 @@
+.navi-tabs {
+    background-color: #faf9f8;
+}
+
+.navi-tabs > div {
+    min-height: 54px;
+}
+
+.navi-tabs {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 54px;
+    color: #606060;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.navi-tabs:hover {
+    color: #0067b1;
+}
+
+.navi-tabs.active {
+    color: #171717;
+    font-weight: 600;
+}

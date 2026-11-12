@@ -1,0 +1,50 @@
+
+<div class="top-overlay text-white px-3 px-md-4 pt-4 pb-5">
+
+    <div class="d-flex flex-column flex-md-row
+        justify-content-between align-items-start gap-3">
+
+        <div class="d-flex flex-column gap-3">
+
+            <div class="d-flex flex-wrap align-items-center gap-3">
+
+                <h2 class="fw-semibold mb-0">
+                    {{ employee.name }}
+                </h2>
+
+                <span class="employee-status">
+                    {{ employee.status }}
+                </span>
+
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center gap-3 small">
+
+                @for (item of employee.details; track item.label) {
+
+                    <span>
+                        {{ item.label }} <strong>{{ item.value }}</strong>
+                    </span>
+
+                    @if (!$last) {
+                        <span class="d-none d-md-inline">|</span>
+                    }
+
+                }
+
+            </div>
+
+        </div>
+
+        <!-- Header Actions -->
+        <div class="d-flex align-items-center gap-2">
+
+            <button class="btn btn-sm text-white border-0">
+                <i class="bi bi-three-dots fs-5"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
