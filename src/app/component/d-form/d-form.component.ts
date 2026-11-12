@@ -4,6 +4,7 @@ import { Component, input } from "@angular/core";
     selector: "app-d-form",
     standalone: true,
     templateUrl: "./d-form.component.html",
+    styleUrl: "./d-form.component.css",
 })
 export class DFormComponent {
     FormTitle = input<string>("Title");

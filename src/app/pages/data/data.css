@@ -1,0 +1,125 @@
+
+.employee-details-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    color: #242424;
+    font-family: inherit;
+}
+
+/* Employee Banner */
+.employee-banner {
+    background-color: #304f52;
+    min-height: 145px;
+}
+
+/* Abstract Strip */
+.employee-banner-strip {
+    height: 14px;
+    background-size: cover;
+    background-position: center 33%;
+    background-repeat: no-repeat;
+}
+
+/* Employee Status */
+.employee-status {
+    background: #f5b052;
+    color: #252525;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Detail Labels */
+.detail-label {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+/* Detail Values */
+.detail-value {
+    color: #222;
+    font-size: 17px;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+/* Navigation */
+.employee-details-tabs {
+    background-color: #faf9f8;
+    border-bottom: 1px solid #dedede;
+}
+
+.employee-details-tabs > div {
+    min-height: 54px;
+}
+
+.employee-detail-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 54px;
+    color: #606060;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.employee-detail-tab:hover {
+    color: #0067b1;
+}
+
+.employee-detail-tab.active {
+    color: #171717;
+    font-weight: 600;
+}
+
+/* Information Sections */
+.employee-info-section {
+    padding: 8px 4px 25px;
+    border-bottom: 1px solid #dedede;
+}
+
+.employee-info-section h4 {
+    font-size: 23px;
+    color: #222;
+}
+
+/* Document Links */
+.employee-document-link {
+    display: inline-block;
+    color: #006b8e;
+    text-decoration: none;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.employee-document-link:hover {
+    color: #0067b1;
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .employee-banner {
+        min-height: auto;
+    }
+
+    .employee-info-section h4 {
+        font-size: 19px;
+    }
+
+    .detail-value {
+        font-size: 15px;
+    }
+
+    .employee-details-tabs {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+}
