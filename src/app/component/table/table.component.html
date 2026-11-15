@@ -1,57 +1,118 @@
-<div class="table-responsive mt-5 border">
 
-    <table class="table table-hover table-sm mb-0">
+<div class="erp-table-page">
+    <!-- <div class="table-actions">
 
-        <thead class="border-bottom">
-            <tr>
-                <th class="p-3 text-nowrap">Operations</th>
+        <span class="item-count">{{ tableData.tRows.length }} items</span>
 
-                @for (cols of tableData.tHead; track cols.field) {
-                <th class="p-3 text-nowrap">{{ cols.header }}</th>
-                }
-            </tr>
-        </thead>
+        <button class="add-button" title="Add">
+            <i class="bi bi-plus-lg"></i>
+        </button>
 
-        <tbody>
-            @for (rows of tableData.tRows; track rows.id) {
-            <tr>
-                <td class="p-3 align-middle">
-                    <div class="dropdown">
-                        <button class="btn btn-sm border-0 text-dark p-1" type="button" data-bs-toggle="dropdown">
-                            ⋮
-                        </button>
+        <div class="dropdown">
+            <button class="btn btn-sm border dropdown-toggle rounded-1"
+                type="button" data-bs-toggle="dropdown">
+                Reciprocal All
+            </button>
 
-                        <ul class="dropdown-menu rounded-0 shadow-sm py-1">
-                            <li>
-                                <a [href]="'/employees/edit/' + rows.id" class="dropdown-item small py-1">
-                                    Edit
-                                </a>
-                            </li>
-                            <li>
-                                <button class="dropdown-item text-danger small py-1" type="button">
-                                    Delete
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </td>
+            <ul class="dropdown-menu rounded-1 shadow-sm">
+                <li><button class="dropdown-item small">Reciprocal All</button></li>
+                <li><button class="dropdown-item small">Reciprocal Yes</button></li>
+                <li><button class="dropdown-item small">Reciprocal No</button></li>
+            </ul>
+        </div>
 
-                @for (item of tableData.tHead; track item.field) {
-                <td class="p-3 align-middle text-nowrap">
+        <button class="more-button" title="More actions">
+            <i class="bi bi-three-dots"></i>
+        </button>
 
-                    @if (item.field === 'name') {
-                    <a [href]="'/employees/' + rows.id" class="text-primary fw-semibold text-decoration-none">
-                        {{$any(rows)[item.field]}}
-                    </a>
-                    } @else {
-                    {{$any(rows)[item.field]}}
+        <div class="table-tools ms-auto">
+            <button title="Download">
+                <i class="bi bi-download"></i>
+            </button>
+            <button title="Column settings">
+                <i class="bi bi-layout-three-columns"></i>
+            </button>
+        </div>
+
+    </div> -->
+
+    <!-- Data Table -->
+    <div class="table-responsive">
+
+        <table class="table erp-table mb-0">
+
+            <thead>
+                <tr>
+
+                    <th class="checkbox-column">
+                        <input type="checkbox" />
+                    </th>
+
+                    @for (col of tableData.tHead; track col.field) {
+                        <th [style.min-width]="col.width">
+                            <div class="column-heading">
+                                {{ col.header }}
+                                <i class="bi bi-arrow-down-up"></i>
+                            </div>
+                        </th>
                     }
 
-                </td>
-                }
-            </tr>
-            }
-        </tbody>
+                    <th class="action-column">Action</th>
 
-    </table>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @for (row of tableData.tRows; track row.id) {
+
+                    <tr>
+
+                        <td class="checkbox-column">
+                            <input type="checkbox" />
+                        </td>
+
+                        @for (col of tableData.tHead; track col.field) {
+
+                            <td>
+
+                                @if (col.type === 'link') {
+
+                                    <a href="javascript:void(0)"
+                                        class="table-link">
+                                        {{$any(row)[col.field]}}
+                                    </a>
+
+                                } @else if (col.type === 'checkbox') {
+
+                                    <input type="checkbox"
+                                        [checked]="$any(row)[col.field]"
+                                        disabled />
+
+                                } @else {
+
+                                    {{$any(row)[col.field]}}
+
+                                }
+
+                            </td>
+
+                        }
+
+                        <td class="action-column">
+                            <button class="edit-button" title="Edit">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        </td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
 </div>
