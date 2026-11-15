@@ -1,0 +1,110 @@
+
+/* Main Container */
+.insert-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 100%;
+    min-height: 92px;
+
+    padding: 18px 24px;
+
+    background-color: #ffffff;
+    border: 1px solid #e1e5e9;
+}
+
+/* Left Content */
+.insert-bar-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Heading */
+.insert-bar-title {
+    color: #25282b;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+}
+
+/* Description */
+.insert-bar-subtitle {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Actions */
+.insert-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Create Button */
+.insert-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 34px;
+    padding: 0 15px;
+
+    color: #ffffff;
+    background-color: #0067b1;
+
+    border: 1px solid #0067b1;
+    border-radius: 3px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: background-color 0.15s ease;
+}
+
+.insert-action-btn i {
+    font-size: 13px;
+}
+
+.insert-action-btn:hover {
+    background-color: #004f8a;
+    border-color: #004f8a;
+}
+
+.insert-action-btn:focus-visible {
+    outline: 2px solid #0067b1;
+    outline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .insert-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .insert-bar-title {
+        font-size: 18px;
+    }
+
+    .insert-bar-actions {
+        width: 100%;
+    }
+
+    .insert-action-btn {
+        width: 100%;
+    }
+
+}

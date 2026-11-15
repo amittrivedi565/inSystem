@@ -1,19 +1,31 @@
-<div class="d-flex flex-column flex-md-row w-100 mt-4 mt-md-5
-            border p-3 p-md-4
-            text-start align-items-start align-items-md-center
-            justify-content-between gap-3"
-     style="background-color: #faf9f8">
 
-    <div class="insert-bar-left">
-        <h3 class="mb-2 fs-4 fs-md-3">{{ Title() }}</h3>
-        <p class="text-muted mb-0">
+<div class="insert-bar mt-5 mb-2">
+
+    <!-- Left Section -->
+    <div class="insert-bar-content">
+
+        <div class="insert-bar-title">
+            {{ Title() }}
+        </div>
+
+        <p class="insert-bar-subtitle">
             {{ SubTitle() }}
         </p>
+
     </div>
 
-    <a href="/dashboard"
-       class="btn btn-outline-secondary text-nowrap rounded-0 p-1">
-        <i class="bi bi-plus-lg me-1"></i>
-    </a>
+    <!-- Right Actions -->
+    <div class="insert-bar-actions">
 
-</div> 
+        <button type="button"
+                class="insert-action-btn"
+                aria-label="Create new">
+
+            <i class="bi bi-plus-lg"></i>
+            <span>Create New</span>
+
+        </button>
+
+    </div>
+
+</div>

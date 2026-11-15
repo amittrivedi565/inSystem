@@ -4,6 +4,7 @@ import { Component, input } from "@angular/core";
     selector: "app-insert-bar",
     standalone: true,
     templateUrl: "./insert.component.html",
+    styleUrl: "./insert.component.css"
 })
 
 export class InsertBarComponent{

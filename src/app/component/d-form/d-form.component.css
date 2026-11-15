@@ -1,15 +1,58 @@
+
+/* Input Fields - Bottom Border Only */
+.form-control,
+.form-select {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0 !important;
+    background-color: transparent;
+    box-shadow: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 13px;
+}
+
+/* Focus State */
+.form-control:focus,
+.form-select:focus {
+    border: none;
+    border-bottom: 2px solid #0067b1;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* Placeholder */
 .form-control::placeholder {
     color: #adb5bd;
     font-size: 11px;
     opacity: 1;
 }
 
-.form-control:focus {
-    border-color: #0067b1;
-    box-shadow: 0 0 0 0.1rem rgba(0, 103, 177, 0.12);
-}
-
+/* Labels */
 .form-label {
     color: #343a40;
+    font-size: 12px;
     margin-bottom: 7px;
+}
+
+/* Select Dropdown */
+.form-select {
+    cursor: pointer;
+}
+
+/* File Input */
+.form-control[type="file"] {
+    padding-top: 5px;
+}
+
+/* Textarea */
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Readonly */
+.form-control:read-only {
+    background-color: transparent;
+    border-bottom-style: dashed;
 }
