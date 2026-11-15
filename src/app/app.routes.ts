@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 import { Dashboard } from './pages/dashboard/dashboard';
 import { Employees } from './pages/employees/employees';
-import { Data } from './pages/data/data';
 import { Payroll } from './pages/payroll/payroll';
 import { Projects } from './pages/projects/projects';
 import { SubContractors } from './pages/sub-contractors/sub-contractors';
@@ -20,6 +19,5 @@ export const routes: Routes = [
   { path: 'sub-contractors', component: SubContractors },
   { path: 'vendors', component: Vendors },
   { path: 'amc', component: Amc },
-  { path: 'data', component: Data },
   { path: '**', redirectTo: 'dashboard' }
 ];
